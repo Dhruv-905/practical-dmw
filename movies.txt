@@ -1,0 +1,64 @@
+@relation movies
+
+@attribute Title string
+@attribute Genre {Action, Comedy, Drama, Thriller, Horror, Sci-Fi, Fantasy}
+@attribute Year numeric
+@attribute Director string
+@attribute Rating numeric
+@attribute Budget numeric
+@attribute BoxOffice numeric
+@attribute Language {English, Hindi, French, Korean, Japanese, Spanish}
+@attribute Duration numeric
+@attribute Region {America, Asia, Europe, Africa}
+
+@data
+'Mission Impossible', Action, 2015, 'Christopher Mcquarrie', 7.8, 120, 500, English, 120, America
+'Golmaal', Comedy, 2020, 'Rohit Shetty', 6.2, 90, 300, Hindi, 110, Asia
+'The King', Drama, 2018, 'David Michor', 8.0, 150, 600, English, 130, Europe
+'Interstellar', Sci-Fi, 2022, 'Christopher Nolan', 9.1, 180, 900, English, 140, America
+'Bleach', Fantasy, 2016, 'Noriyuki Abe', 7.5, 100, 450, Japanese, 120, Asia
+'Gonjiam', Horror, 2017, 'Jung Bum-shik', 5.8, 70, 150, Korean, 100, Asia
+'Oxygen', Thriller, 2019, 'Alexandre Aja', 8.3, 110, 700, French, 135, Europe
+'Money Heist', Drama, 2023, 'Alex Pina', 8.2, 200, 950, Spanish, 150, Africa
+'John Wick', Action, 2024, 'Alex', 9.1, 530, 330, English, 130, America
+'The Crow', Action, 2022, 'Nichole', 8.1, 330, 310, French, 120, Africa
+'Devara', Action, 2025, 'Manish', 9.4, 220, 410, Hindi, 150, Asia
+'Inception', Sci-Fi, 2014, 'James', 9.6, 180, 220, English, 170, Europe
+'Batman', Action, 2022, 'Chris', 7.2, 140, 290, English, 210, America
+'Amaran', Drama, 2025, 'Manish', 8.3, 120, 350, Hindi, 170, Asia
+'The Smile Man', Horror, 2013, 'James Wan', 7.7, 120, 450, Korean, 160, Asia
+'Manna', Drama, 2017, 'Rohit', 7.3, 140, 290, Hindi, 130, Asia
+'Porter', Action, 2014, 'Alexandre', 8.4, 150, 310, English, 290, America
+'Antony', Thriller, 2020, 'Abhishek', 8.8, 100, 290, Hindi, 210, Asia
+'Identify', Horror, 2019, 'Wan', 7.6, 130, 330, English, 120, America
+'Maharaj', Fantasy, 2023, 'Manish', 7.9, 160, 470, Hindi, 160, Asia
+'Horror Story', Horror, 2017, 'Nitya', 8.0, 130, 520, Hindi, 120, Asia
+'Squid Game', Drama, 2024, 'Sophia', 8.4, 190, 420, Korean, 190, Europe
+'MJ', Comedy, 2020, 'Alexis', 7.7, 140, 360, French, 180, Europe
+'Marri', Action, 2017, 'Christopher', 7.9, 220, 300, Hindi, 150, Asia
+'Godfather', Comedy, 2020, 'Roman', 6.2, 100, 200, English, 210, America
+'Scorpion', Action, 2014, 'David Michor', 8.0, 170, 300, English, 230, Europe
+'I', Thriller, 2020, 'Nolan', 9.1, 170, 300, Hindi, 130, Asia
+'Demon Slayer', Fantasy, 2018, 'Noriyuki', 9.5, 400, 350, Japanese, 220, Europe
+'Godzilla', Fantasy, 2024, 'Jung Bum-shik', 8.8, 200, 450, English, 200, America
+'Orphan', Drama, 2012, 'Alexis', 8.3, 140, 200, French, 130, Africa
+'Mortal Kombat', Action, 2022, 'Scott', 8.1, 300, 550, Spanish, 190, Africa
+'Johnny', Action, 2024, 'Alexis', 9.0, 330, 280, English, 230, America
+'The Crawler', Action, 2020, 'Monarchi', 7.0, 230, 330, French, 190, Africa
+'Dev', Action, 2023, 'Manish', 8.4, 230, 310, Hindi, 180, Asia
+'Inspector', Action, 2018, 'Manish', 7.8, 210, 310, Hindi, 190, Asia
+'Death Note', Thriller, 2010, 'Gojo', 9.8, 310, 210, Japanese, 290, Europe
+'Skyfall', Action, 2012, 'Sam Mendes', 8.0, 143, 1000, English, 150, Europe
+'The Pursuit of Happyness', Drama, 2006, 'Gabriele Muccino', 8.0, 117, 307, English, 120, America
+'The Dark Knight', Action, 2008, 'Christopher Nolan', 9.0, 152, 1000, English, 160, America
+'Parasite', Thriller, 2019, 'Bong Joon-ho', 8.6, 132, 259, Korean, 140, Asia
+'The Avengers', Action, 2012, 'Joss Whedon', 8.0, 143, 1518, English, 200, America
+'A Quiet Place', Horror, 2018, 'John Krasinski', 7.5, 90, 340, English, 100, America
+'Avengers: Endgame', Action, 2019, 'Anthony and Joe Russo', 8.4, 181, 2797, English, 180, America
+'Coco', Action, 2017, 'Lee Unkrich', 8.4, 105, 809, Spanish, 140, America
+'The Godfather Part II', Drama, 1974, 'Francis Ford Coppola', 9.0, 202, 193, English, 180, Europe
+'The Lion King', Drama, 1994, 'Roger Allers', 8.5, 88, 968, English, 200, America
+'The Matrix', Sci-Fi, 1999, 'Lana and Lilly Wachowski', 8.7, 136, 466, English, 150, America
+'The Social Network', Drama, 2010, 'David Fincher', 8.1, 120, 225, English, 140, America
+'Mad Max', Action, 2015, 'George Miller', 8.1, 120, 376, English, 190, America
+'La La Land', Drama, 2016, 'Damien Chazelle', 8.0, 128, 446, English, 170, America
