@@ -1,0 +1,52 @@
+import pandas as pd
+from mlxtend.preprocessing import TransactionEncoder
+from mlxtend.frequent_patterns import apriori, association_rules
+
+# Step 1: Define the shopping dataset as a list of transactions (simplified for market basket analysis)
+data = [
+    ['Smartphone X1', 'Electronics', 'TechNova', 'Card', 'China'],
+    ['Yoga Mat Pro', 'Sports', 'FitGear', 'UPI', 'India'],
+    ['LED TV 55"', 'Electronics', 'VisionMax', 'NetBanking', 'China'],
+    ['Running Shoes', 'Clothing', 'Stride', 'Card', 'USA'],
+    ['Organic Almonds', 'Grocery', 'NutriFarm', 'UPI', 'India'],
+    ['Lipstick Rouge', 'Beauty', 'Glamz', 'Card', 'France'],
+    ['Office Chair', 'Furniture', 'ComfortLine', 'NetBanking', 'Germany'],
+    ['Wireless Earbuds', 'Electronics', 'SoundBeats', 'Card', 'China'],
+    ['Men T-Shirt', 'Clothing', 'UrbanEdge', 'Cash', 'India'],
+    ['Green Tea Pack', 'Grocery', 'HerbZen', 'UPI', 'Japan'],
+    ['Perfume Bloom', 'Beauty', 'AromaLux', 'Card', 'France'],
+    ['Mountain Bike', 'Sports', 'RidePro', 'NetBanking', 'USA'],
+    ['Dining Table Set', 'Furniture', 'WoodCraft', 'Card', 'India'],
+    ['Laptop ZPro', 'Electronics', 'ByteCore', 'Card', 'USA'],
+    ['Women Jeans', 'Clothing', 'DenimEra', 'Cash', 'China'],
+    ['Rice 5kg', 'Grocery', 'DailyGrain', 'UPI', 'India'],
+    ['Face Wash', 'Beauty', 'GlowMe', 'UPI', 'France'],
+    ['Treadmill Pro', 'Sports', 'GymZone', 'Card', 'Germany'],
+    ['Bookshelf', 'Furniture', 'SpaceSaver', 'NetBanking', 'China'],
+    ['Tablet 10"', 'Electronics', 'TechNova', 'Card', 'Japan'],
+    ['Hoodie Unisex', 'Clothing', 'ComfyStyle', 'Cash', 'India'],
+    ['Cooking Oil 1L', 'Grocery', 'PureDrop', 'UPI', 'India'],
+    ['Nail Polish Set', 'Beauty', 'ColorPop', 'Card', 'France'],
+    ['Football', 'Sports', 'PlayPro', 'UPI', 'USA'],
+    ['Sofa 3-Seater', 'Furniture', 'CozyNest', 'NetBanking', 'Germany'],
+    ['Smartwatch S2', 'Electronics', 'TechNova', 'Card', 'China'],
+    ['Kurti Set', 'Clothing', 'EthniChic', 'Cash', 'India'],
+    ['Wheat Flour 5kg', 'Grocery', 'GrainTrust', 'UPI', 'India'],
+    ['Moisturizer Cream', 'Beauty', 'DermaGlow', 'Card', 'France'],
+    ['Tennis Racket', 'Sports', 'AceStrike', 'NetBanking', 'Germany'],
+]
+
+# Step 2: Encode the transaction data
+te = TransactionEncoder()
+te_ary = te.fit(data).transform(data)
+df = pd.DataFrame(te_ary, columns=te.columns_)
+
+# Step 3: Find frequent itemsets with Apriori
+frequent_itemsets = apriori(df, min_support=0.2, use_colnames=True)
+
+# Step 4: Generate association rules
+rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1.0)
+
+# Step 5: Display results
+print("📦 Frequent Itemsets:\n", frequent_itemsets)
+print("\n🔗 Association Rules:\n", rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']])
